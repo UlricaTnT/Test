@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录系统</title>
+    <meta charset="utf-8" />
+    <script src="scripts/jquery-1.11.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnLogin").click(function () {
+                var name = $("#txtUserName").val();
+                var pwd = $("#txtPwd").val();
+                $.ajax({
+                    url: "Ashx/Login.ashx",
+                    data: "name=" + name + "&pwd=" + pwd,
+                    type: "Post",
+                    dataType: "text",
+                    success: function (msg) {
+                        if (msg=="1") {
+                            $("#divMsg").html("登录成功");
+                        } else {
+                            $("#divMsg").html("登录失败");
+                        }
+                    }
+
+
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="text-align:center;">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" id="txtUserName" name="name" value="admin" /></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password" id="txtPwd" name="name" value="admin" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" id="btnLogin" name="name" value="登录" /></td>
+            </tr>
+        </table>
+        <div id="divMsg"></div>
+    </div>
+</body>
+</html>
+
