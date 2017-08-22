@@ -1,0 +1,14 @@
+v-bind：这里该指令的作用是：“将这个元素节点的 title 属性和 Vue 实例的 message 属性保持一致”
+v-if:
+v-for:指令可以绑定数组的数据来渲染一个项目列表
+v-on:绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法
+v-model:实现表单输入和应用状态之间的双向绑定
+
+这里有一个（假想的）使用了组件的应用模板是什么样的例子：
+<div id="app">
+  <app-nav></app-nav>
+  <app-view>
+    <app-sidebar></app-sidebar>
+    <app-content></app-content>
+  </app-view>
+</div>
